@@ -8,12 +8,12 @@ st.title("Avalanche Streamlit App")
 # Get data from Snowflake using explicit connection params
 session = st.connection(
     "snowflake",
-    account = "MGMZHQF-MRB04708"
-    user = "EDELYNBAUTISTA12"
-    authenticator = "externalbrowser"
-    role = "ACCOUNTADMIN"
-    warehouse = "COMPUTE_WH"
-    database = "AVALANCHE_DB"
+    account = "MGMZHQF-MRB04708",
+    user = "EDELYNBAUTISTA12",
+    authenticator = "externalbrowser",
+    role = "ACCOUNTADMIN",
+    warehouse = "COMPUTE_WH",
+    database = "AVALANCHE_DB",
     schema = "AVALANCHE_SCHEMA"
 ).session()
 
@@ -71,3 +71,4 @@ if user_question:
         f"SELECT SNOWFLAKE.CORTEX.COMPLETE('claude-3-5-sonnet', '{user_question}');"
     ).collect()[0][0]
     st.write(response)
+
